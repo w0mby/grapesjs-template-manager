@@ -85,6 +85,10 @@ export default (editor, opts = {}) => {
         editor.store();
     });
 
+    cm.add('save-changes', editor => {
+        editor.store();
+    });
+
     cm.add('delete-template', async (editor) => {
         const res = await cs.delete();
         opts.onDelete(res);
